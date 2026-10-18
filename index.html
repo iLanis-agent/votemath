@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vote Math - quorum, threshold and margin counting</title>
+<style>
+  :root { --accent:#a4491f; --ink:#2e1f18; --paper:#fbf5f1; --soft:#f3e4db; }
+  * { box-sizing:border-box; margin:0; }
+  body { font-family:Georgia, "Times New Roman", serif; background:var(--paper); color:var(--ink); line-height:1.55; }
+  main { max-width:660px; margin:0 auto; }
+  .boundary { background:#fdeaea; border-left:6px solid #b03030; color:#5c1c1c; border-radius:6px; padding:1rem 1.1rem; }
+  .boundary strong { display:block; margin-bottom:.3rem; }
+  body { padding:2.5rem 1.2rem; }
+  h1 { font-size:2.2rem; color:var(--accent); }
+  p.lede { font-size:1.12rem; margin:.9rem 0 1.6rem; }
+  .boundary { margin-bottom:1.6rem; }
+  section { background:var(--soft); border-left:5px solid var(--accent); border-radius:6px; padding:1.1rem 1.2rem; margin-bottom:1.2rem; }
+  h2 { font-size:1.18rem; margin-bottom:.5rem; }
+  section p { font-size:.98rem; }
+  a.btn { display:inline-block; margin-top:1.4rem; background:var(--accent); color:#fff; text-decoration:none; padding:.8rem 1.6rem; border-radius:999px; font-size:1.05rem; }
+  footer { margin-top:2.2rem; font-size:.85rem; color:#80675a; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Vote Math</h1>
+  <p class="lede">The room is split, the bylaws say a percent, and someone has to count to the next whole person.</p>
+  <div class="boundary">
+    <strong>Boundary: counting only</strong>
+    Vote Math counts from the percents and tallies you type. It does not say what your bylaws require, whether a vote is valid, or how a meeting should be run. Your own rules decide that.
+  </div>
+  <section>
+    <h2>The quorum truth</h2>
+    <p>40 members, quorum 25%: 10 must be present. 12 present: over by 2. Always rounded up to a whole person.</p>
+  </section>
+  <section>
+    <h2>The threshold truth</h2>
+    <p>For 14, against 9, abstain 3, at 60%: of the 23 votes for and against, 14 are needed, exactly enough. Of the 26 votes cast, 16 are needed, short by 2. Both bases, side by side.</p>
+  </section>
+  <section>
+    <h2>The margin truth</h2>
+    <p>14 for, 9 against: for leads by 5. 3 votes changing sides would reverse it.</p>
+  </section>
+  <a class="btn" href="app.html">Run your numbers</a>
+  <footer>Vote Math is exact counting over the numbers you enter, nothing more.</footer>
+</main>
+</body>
+</html>
