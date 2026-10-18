@@ -1,0 +1,210 @@
+[
+ {
+  "fn": "quorumTruth",
+  "args": [
+   40,
+   25,
+   12
+  ],
+  "expected": "40 members, quorum 25%: 10 must be present. 12 present: over by 2."
+ },
+ {
+  "fn": "quorumTruth",
+  "args": [
+   40,
+   25,
+   10
+  ],
+  "expected": "40 members, quorum 25%: 10 must be present. 10 present: exactly enough."
+ },
+ {
+  "fn": "quorumTruth",
+  "args": [
+   40,
+   25,
+   7
+  ],
+  "expected": "40 members, quorum 25%: 10 must be present. 7 present: short by 3."
+ },
+ {
+  "fn": "quorumTruth",
+  "args": [
+   1,
+   100,
+   1
+  ],
+  "expected": "1 member, quorum 100%: 1 must be present. 1 present: exactly enough."
+ },
+ {
+  "fn": "quorumTruth",
+  "args": [
+   7,
+   50,
+   3
+  ],
+  "expected": "7 members, quorum 50%: 4 must be present. 3 present: short by 1."
+ },
+ {
+  "fn": "quorumTruth",
+  "args": [
+   40,
+   0,
+   12
+  ],
+  "expected": "ERR:required percent must be over 0 and at most 100"
+ },
+ {
+  "fn": "quorumTruth",
+  "args": [
+   40,
+   25,
+   41
+  ],
+  "expected": "ERR:present must be a whole number from 0 up to the member count"
+ },
+ {
+  "fn": "quorumTruth",
+  "args": [
+   0,
+   25,
+   0
+  ],
+  "expected": "ERR:members must be a whole number from 1 to 100000"
+ },
+ {
+  "fn": "thresholdTruth",
+  "args": [
+   14,
+   9,
+   3,
+   60
+  ],
+  "expected": "For 14, against 9, abstain 3. Required 60%: of the 23 votes for and against, 14 are needed, exactly enough. Of the 26 votes cast, 16 are needed, short by 2."
+ },
+ {
+  "fn": "thresholdTruth",
+  "args": [
+   14,
+   9,
+   0,
+   60
+  ],
+  "expected": "For 14, against 9, abstain 0. Required 60%: of the 23 votes cast, 14 are needed, exactly enough."
+ },
+ {
+  "fn": "thresholdTruth",
+  "args": [
+   20,
+   3,
+   2,
+   50
+  ],
+  "expected": "For 20, against 3, abstain 2. Required 50%: of the 23 votes for and against, 12 are needed, enough by 8. Of the 25 votes cast, 13 are needed, enough by 7."
+ },
+ {
+  "fn": "thresholdTruth",
+  "args": [
+   1,
+   0,
+   0,
+   100
+  ],
+  "expected": "For 1, against 0, abstain 0. Required 100%: of the 1 vote cast, 1 is needed, exactly enough."
+ },
+ {
+  "fn": "thresholdTruth",
+  "args": [
+   14,
+   9,
+   3,
+   66.67
+  ],
+  "expected": "For 14, against 9, abstain 3. Required 66.67%: of the 23 votes for and against, 16 are needed, short by 2. Of the 26 votes cast, 18 are needed, short by 4."
+ },
+ {
+  "fn": "thresholdTruth",
+  "args": [
+   0,
+   0,
+   5,
+   50
+  ],
+  "expected": "ERR:enter at least one vote for or against"
+ },
+ {
+  "fn": "thresholdTruth",
+  "args": [
+   14,
+   -1,
+   3,
+   60
+  ],
+  "expected": "ERR:votes must be whole numbers, 0 or more"
+ },
+ {
+  "fn": "thresholdTruth",
+  "args": [
+   14,
+   9,
+   3,
+   101
+  ],
+  "expected": "ERR:required percent must be over 0 and at most 100"
+ },
+ {
+  "fn": "marginTruth",
+  "args": [
+   14,
+   9
+  ],
+  "expected": "14 for, 9 against: for leads by 5. 3 votes changing sides would reverse it (2 votes would leave it 12 to 11)."
+ },
+ {
+  "fn": "marginTruth",
+  "args": [
+   10,
+   10
+  ],
+  "expected": "10 for, 10 against: tied, one vote changing sides decides it."
+ },
+ {
+  "fn": "marginTruth",
+  "args": [
+   12,
+   8
+  ],
+  "expected": "12 for, 8 against: for leads by 4. 2 votes changing sides would tie it, 3 would reverse it."
+ },
+ {
+  "fn": "marginTruth",
+  "args": [
+   11,
+   10
+  ],
+  "expected": "11 for, 10 against: for leads by 1. 1 vote changing sides would reverse it."
+ },
+ {
+  "fn": "marginTruth",
+  "args": [
+   9,
+   10
+  ],
+  "expected": "9 for, 10 against: against leads by 1. 1 vote changing sides would reverse it."
+ },
+ {
+  "fn": "marginTruth",
+  "args": [
+   4,
+   6
+  ],
+  "expected": "4 for, 6 against: against leads by 2. 1 vote changing sides would tie it, 2 would reverse it."
+ },
+ {
+  "fn": "marginTruth",
+  "args": [
+   3,
+   3.5
+  ],
+  "expected": "ERR:votes must be whole numbers, 0 or more"
+ }
+]
